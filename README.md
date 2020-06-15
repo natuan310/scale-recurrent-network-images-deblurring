@@ -1,11 +1,9 @@
----
 title: Nguyen Anh Tuan - Final Project
 tags: CoderSchool, Tonga, MachineLearning
----
+
 
 # Image Deblurring by Scale - Recurrent Network
 
-[TOC]
 
 ## 1. INTRODUCTION
 
@@ -20,7 +18,9 @@ We will need data is blurry and sharp images to train the model. GOPRO has a dat
 You can download a light version (9GB) or the complete version (35GB).
 
 [GOPRO LIGHT 9GB](https://drive.google.com/file/d/1H0PIXvJH4c40pk7ou6nAwoxuR4Qh_Sa2/view)
+
 [GOPRO FULL 35GB](https://drive.google.com/file/d/1SlURvdQsokgsoyTosAaELc4zRjQz9T2U/view)
+
 [Images from Mobile Images](https://www.kaggle.com/kwentar/blur-dataset)
 
 
