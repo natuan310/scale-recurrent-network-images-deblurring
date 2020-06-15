@@ -10457,13 +10457,17 @@ video {
 }
 
 #original_img {
-    max-width: 100%;
+    display: block;
+    width: 100%;
+    height: auto;
     max-height: 60vh;
     padding-top: 0.5rem;
 }
 
 #deblur_img {
-    max-width: 100%;
+    display: block;
+    width: 100%;
+    height: auto;
     max-height: 60vh;
     padding-top: 0.5rem;
 }

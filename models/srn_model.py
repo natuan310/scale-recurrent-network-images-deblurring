@@ -28,7 +28,7 @@ UPLOAD_DIR = os.path.join(STATIC_DIR, "uploads")
 CROPPED_DIR = os.path.join(UPLOAD_DIR, "cropped")
 RESULT_DIR = os.path.join(UPLOAD_DIR, "results")
 FINISH_DIR = os.path.join(UPLOAD_DIR, "finish")
-CKPT = os.path.join(ROOT_DIR, "checkpoints")
+CKPT = os.path.join(ROOT_DIR, "srn_checkpoints")
 print(ROOT_DIR)
 
 class DEBLUR(object):
@@ -45,7 +45,7 @@ class DEBLUR(object):
         self.data_list = list(map(lambda x: x.split(' '), self.data_list))
         random.shuffle(self.data_list)
     
-        self.train_dir = os.path.join(ROOT_DIR, 'checkpoints', args.model)
+        self.train_dir = os.path.join(ROOT_DIR, 'srn_checkpoints', args.model)
         if not os.path.exists(self.train_dir):
             os.makedirs(self.train_dir)
 
@@ -264,7 +264,7 @@ class DEBLUR(object):
         print(" [*] Reading checkpoints...", checkpoint_dir)
         model_name = "deblur.model"
         ckpt = tf.train.get_checkpoint_state(checkpoint_dir)
-        print(ckpt)
+#         print(ckpt)
         if step is not None:
             ckpt_name = 'deblur.model-523000'
             self.saver.restore(sess, os.path.join(os.path.abspath(checkpoint_dir), ckpt_name))
@@ -286,7 +286,7 @@ class DEBLUR(object):
         if not os.path.exists(output_path):
             os.makedirs(output_path)
         imgsName = sorted(os.listdir(input_path))
-        print(imgsName)
+#         print(imgsName)
         inp_chns = 3 if self.args.model == 'color' else 1
         self.batch_size = 1 if self.args.model == 'color' else 3
         inputs = tf.compat.v1.placeholder(shape=[self.batch_size, H, W, inp_chns], dtype=tf.float32)
@@ -311,18 +311,18 @@ class DEBLUR(object):
                     rot = True
                 h = int(blur.shape[0])
                 w = int(blur.shape[1])
-                print(H, W, h, w)
+#                 print(H, W, h, w)
                 if h > H or w > W:
                     
                     scale = min(1.0 * H / h, 1.0 * W / w)
                     new_h = int(h * scale)
                     new_w = int(w * scale)
-                    print('>>>>>>', scale, new_h, new_w)
+#                     print('>>>>>>', scale, new_h, new_w)
                     blurPad = cv2.resize(blur, (new_w, new_h), interpolation = cv2.INTER_AREA)
                     resize = True
                     blurPad = np.pad(blurPad, ((0, H - new_h), (0, W - new_w), (0, 0)), 'edge')
                 else:
-                    print('<<<<<<')
+#                     print('<<<<<<')
                     blurPad = np.pad(blur, ((0, H - h), (0, W - w), (0, 0)), 'edge')
                 blurPad = np.expand_dims(blurPad, 0)
 

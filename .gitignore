@@ -1,5 +1,7 @@
 
 .ipynb_checkpoints/*
+*/.ipynb_checkpoints/*
+*/*/.ipynb_checkpoints/*
 __pycache__/*
 _test_data/*
 checkpoints/*
@@ -15,3 +17,4 @@ util/BasicConvLSTMCell_old.py
 util/util_old.py
 run_model_old.py
 images/*
+srn_checkpoints/*

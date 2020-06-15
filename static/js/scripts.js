@@ -423,8 +423,8 @@ vid_save.addEventListener('click', (e) => {
 
 let btn_back = document.getElementById('btn-back');
 btn_back.addEventListener('click', (e) => {
-    document.getElementsByClassName("deblur_result")[0].removeAttribute("src");
-    document.getElementsByClassName("original_result")[0].removeAttribute("src");
-    var elmnt = document.getElementById("deblur");
+    var elmnt = document.getElementById("models");
     elmnt.scrollIntoView();
+//     document.getElementsByClassName("deblur_result")[0].removeAttribute("src");
+//     document.getElementsByClassName("original_result")[0].removeAttribute("src");
 });

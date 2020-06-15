@@ -65,7 +65,7 @@ def def_res(filename):
     img = cv2.imread(os.path.join(CROPPED_DIR, filename))
     w, h, c = img.shape
     _long = max(w, h) + 16 - (max(w, h) % 16)
-    return _long, _long * 2 / 3
+    return int(_long), int(_long * 2 / 3)
 
 # home page
 @app.route("/")
