@@ -1,6 +1,5 @@
-title: Nguyen Anh Tuan - Final Project
-tags: CoderSchool, Tonga, MachineLearning
-
+CoderSchool - Machine Learning Engineer
+Final Project - Nguyen Anh Tuan
 
 # Image Deblurring by Scale - Recurrent Network
 
