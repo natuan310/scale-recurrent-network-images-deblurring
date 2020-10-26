@@ -4,8 +4,8 @@ import time
 import random
 import datetime
 import cv2
-from matplotlib import pyplot as plt
-from PIL import Image
+# from matplotlib import pyplot as plt
+# from PIL import Image
 import numpy as np
 import tensorflow as tf
 import tf_slim as slim
