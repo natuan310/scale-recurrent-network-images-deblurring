@@ -4,9 +4,9 @@ from flask import Flask, render_template, request, jsonify
 from flask import send_from_directory
 import numpy as np
 import pandas as pd
-from PIL import Image
+# from PIL import Image
 import cv2
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 import shutil
 import re
 import base64
@@ -15,6 +15,9 @@ import tensorflow as tf
 import run_srn
 import argparse
 from models import srn_model
+import warnings
+
+warnings.filterwarnings('ignore')
 
 app = Flask(__name__)
 
